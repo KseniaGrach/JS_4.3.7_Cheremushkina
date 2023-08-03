@@ -52,7 +52,7 @@ async function getSearchItem() {
 
     const urlSearchRepositories = new URL("https://api.github.com/search/repositories");
     let repositoriesPart = searchInput.value;
-    if (repositoriesPart == "") {
+    if (repositoriesPart == "" || repositoriesPart.indexOf(' ') >= 0) {
         deleteSearch();
 
 	    return;
